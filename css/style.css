@@ -1,0 +1,932 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root{
+    --header-height: 3rem;
+    --font-semi: 600;
+}
+
+
+/*============= CORES =============*/
+:root{
+    --first-color: #4070f4;
+    --second-color: #0e2431;
+}
+
+/*============= FONTES =============*/
+:root{
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h2-font-size: 1.25rem; 
+    --normal-font-size: 0.938rem;
+}
+
+@media screen and (min-width: 768px){
+    :root{
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem; 
+        --normal-font-size: 1rem;
+    }
+}
+
+/*============= MARGENS =============*/
+:root{
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+}
+
+
+/*============= Z-INDEX =============*/
+:root{
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+
+
+/*============= BÁSICO =============*/
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 3rem 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.938rem;
+    color: #fff;
+    background-color: #292935;
+}
+
+h1,h2, p{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/*============= CLASSES =============*/
+.section-title{
+    position: relative;
+    font-size: 2rem;
+    color: #6DB0FF;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-title::after{
+    position: absolute;
+    content: "";
+    width: 64px;
+    height: 0.18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: #6DB0FF;
+}
+
+.section-title::before{
+    position: absolute;
+    content: "";
+    width: 78px;
+    height: 0.16rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    background-color: #6DB0FF;
+}
+
+.section{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+/*============= LAYOUT =============*/
+.bd-grid{
+    max-width: 1050px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: #292935;
+    border-bottom: 1px solid #6DB0FF;
+}
+
+/*============= MENU =============*/
+.nav{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;  
+}
+
+@media screen and (max-width: 768px){
+    .nav__menu{
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        top: 3rem;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        background-color: #6DB0FF;
+        transition: .5s;
+        border-radius: 20px 0;
+    }
+
+    .nav__item{
+        padding-bottom: 20px;
+    }
+}
+
+.nav__item{
+    margin-bottom: var(--mb-4);
+}
+
+.nav__link{
+    position: relative;
+    color: #fff !important;
+}
+
+.nav__link:hover{
+    color: #6DB0FF !important;
+}
+
+
+.nav__logo{
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.nav__logo span{
+    font-size: 2rem;
+    color: #6DB0FF;
+}
+
+.nav__toggle{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/*============= MOSTRAR MENU =============*/
+.show{
+    right: 0;
+}
+
+
+/*============= HOME =============*/
+.home{
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem !important;
+}
+
+.img-social{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+}
+
+.home__title2{
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.home__title2 span{
+    font-weight: 800;
+    color: #6DB0FF;
+}
+
+.home__title{
+    font-size: 3rem !important;
+    margin-bottom: 2.5rem;
+}
+
+.home__title-color{
+    font-size: 4rem !important;
+    color: #6DB0FF;
+}
+
+.img-social .home__img{
+    width: 440px;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.img-social .home__img:hover{
+    transform: scale(1.04);
+}
+
+.home__social{
+    display: flex;
+    flex-direction: column;
+}
+
+.home__social-icon{
+    font-size: 1.5rem;
+    color: #4070f4;
+    transition: all .3s;
+}
+
+.home__social-icon:hover{
+    color: #6DB0FF;
+}
+
+
+/*============= BOTÕES =============*/
+.button__contact{
+    display: inline-block;
+    background-color: #4070f4;
+    color: #fff;
+    padding: .75rem 2.5rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    transition: all .5s;
+}
+
+.button__contact:hover{
+    background-color: #6DB0FF;
+    transform: scale(1.1);
+}
+
+.button__download{
+    border: 2px solid #4070f4;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    padding: .75rem 2.5rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    margin-left: 16px;
+    margin-top: 28px;
+    transition: all 0.4s ease;
+}
+
+.button__download:hover{
+    background-color: #4070f4;
+    color: #292935;
+}
+
+.button__download:hover:after {
+    width: 100%;
+}
+
+.button__download:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.4s ease;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #4070f4;
+}
+
+
+/*============= SOBRE =============*/
+.about__container{
+    row-gap: 2rem;
+    text-align: center;
+}
+
+.about__img{
+    justify-self: center;
+}
+
+.about__img img{
+    width: 200px;
+    border-radius: .5rem;
+}
+
+.about__text{
+    text-align: initial;
+    margin-left: 1.1rem;
+}
+
+
+/*============= HABILIDADES =============*/
+.skill__container__flex{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.skills__container{
+    row-gap: 2rem;
+    text-align: center;
+}
+
+.skills__subtitle{
+    margin-bottom: 1rem;
+}
+
+
+.skill__data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .6rem;
+    background-color: rgb(240, 236, 236);
+}
+
+.skills__icon{
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #4070f4;
+}
+
+.skills__names{
+    display: flex;
+    align-items: center;
+    color: #292935;
+}
+
+.skills__bar{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #4070f4;
+    height: .45rem;
+    border-radius: .5rem;
+    z-index: -10;
+}
+
+.skills__percentage{
+    color: #292935;
+}
+
+.skills__html{
+    width: 65%;
+    z-index: 1000;
+}
+
+.skills__css{
+    width: 50%;
+    z-index: 1000;
+}
+
+.skills__js{
+    width: 30%;
+    z-index: 1000;
+}
+
+.skills__figma{
+    width: 40%;
+    z-index: 1000;
+}
+
+.skills__ux{
+    width: 40%;
+    z-index: 1000;
+}
+
+.skills__git{
+    width: 20%;
+    z-index: 1000;
+}
+
+.skills__boot{
+    width: 20%;
+    z-index: 1000;
+}
+
+.skills__wordp{
+    width: 20%;
+    z-index: 1000;
+}
+
+.skills__breve{
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+.skills__img{
+    border-radius: .5rem;
+}
+
+
+/*============= PORTFOLIO =============*/
+.work{
+    text-align: center;
+}
+
+.work__container{
+    row-gap: 2rem;
+}
+
+.work__img{
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.work__img img{
+    transition: 1s;
+    cursor: pointer;
+}
+
+.work__img img:hover{
+    transform: scale(1.1);
+}
+
+.text-work{
+    color: #6DB0FF;
+    font-size: 1.3rem;
+}
+
+.text-workk{
+    font-size: 1.3rem;
+}
+
+.text-work2{
+    color: #FFC107;
+    font-size: 1.3rem;
+}
+
+.text-work4{
+    color: #FF3366;
+    font-size: 1.3rem;
+}
+
+.text-work7{
+    color: #913FDD;
+    font-size: 1.3rem;
+}
+
+.p-work{
+    font-size: 1.1rem;
+}
+
+
+/*============= CONTATO =============*/
+.contact__input{
+    width: 100%;
+    font-size: 0.938rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1.5px solid #0e2431;
+    outline: none;
+    margin-bottom: 2rem;
+}
+
+.contact__input:focus{
+    border: 3px solid #4070f4;
+}
+
+.contact__input-name{
+    margin-bottom: 1.6rem;
+}
+
+.contact__button{
+    display: block;
+    border: none;
+    outline: none;
+    font-size: 0.938rem;
+    cursor: pointer;
+    margin-left: auto;
+    background-color: #4070f4;
+    color: #fff;
+    padding: .75rem 2.5rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    transition: all .5s;
+    width: 100%;
+}
+
+.contact__button:hover{
+    background-color: #6DB0FF;
+    transform: scale(1.1);
+}
+
+
+/*============= FOOTER =============*/
+.footer{
+    background-color: #fff;
+    text-align: center;
+    font-weight: 600;
+    padding: 2rem 0;
+    border-radius: 30px 30px 0 0;
+}
+
+.footer__title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #292935;
+}
+
+.footer__title span{
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: #4070f4;
+}
+
+.footer__social{
+    margin-bottom: 2rem;
+}
+
+.footer__icon{
+    font-size: 1.5rem;
+    color: #292935;
+    margin: 0 1rem;
+}
+
+.footer p{
+    color: #292935;
+}
+
+.footer .date__footer{
+    color: #5f5f5f;
+    font-size: 11px;
+}
+
+
+/*============= RESPONSIVO =============*/
+@media screen and (max-width: 460px){
+    .home{
+        height: calc(100vh - 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        text-align: center ;
+        margin-top: 1rem !important;       
+    }
+
+    .home__social{
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+        margin-top: -3rem;
+    }
+
+    .img-social{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: -3.4rem;
+    }
+    
+    .home__data{
+        align-self: center;
+    }
+    
+    .home__title2{
+        font-size: .9rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+    }
+    
+    .home__title2 span{
+        font-weight: 800;
+        color: #6DB0FF;
+    }
+    
+    .home__title{
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .home__title-color{
+        color: #6DB0FF;
+    }
+
+    .button__contact{
+        padding: 1.1rem 3.6rem;
+        font-size: 1.1rem;
+    }
+    
+    .img-social .home__img{
+        width: 260px;
+        margin-top: 6rem;
+        margin-right: -30px;
+    }
+    
+    .home__social-icon{
+        width: max-content;
+        margin-top: 3.6rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        color: #4070f4;
+    }
+
+   
+
+    .skills__bar{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #4070f4;
+        height: .45rem;
+        border-radius: .5rem;
+        z-index: 1;
+    }
+
+    .skill__container__flex{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .home{
+        height: calc(100vh - 3rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    .home__social{
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+        margin-top: -3rem;
+    }
+
+    .img-social{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .img-social .home__img{
+        width: 290px;
+        margin-top: 6rem;
+        margin-right: -30px;
+    }
+    
+    .home__data{
+        align-self: center;
+    }
+    
+    .home__title2{
+        font-size: .9rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+    }
+    
+    .home__title2 span{
+        font-weight: 800;
+        color: #6DB0FF;
+    }
+    
+    .home__title{
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .home__title-color{
+        color: #6DB0FF;
+    }
+    
+    
+    .home__social-icon{
+        width: max-content;
+        margin-top: 3.6rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        color: #4070f4;
+    }
+
+    .about{
+        padding-top: 10rem !important;
+    }
+
+    .skills__bar{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #4070f4;
+        height: .45rem;
+        border-radius: .5rem;
+        z-index: 1;
+    }
+
+    .skill__container__flex{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+
+    .section-title{
+        font-size: 1.5rem;
+    }
+
+    .section-title::before{
+        position: absolute;
+        content: "";
+        width: 68px;
+        height: 0.16rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+        background-color: #6DB0FF;
+    }
+}
+
+@media screen and (min-width: 768px){
+    body{
+        margin: 0;
+    }
+    .section{
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+    .section-title{
+        margin-bottom: 3rem;
+    }
+
+    .section-title:after{
+        width: 80px;
+        top: 3rem;
+    }
+
+    .nav{
+        height: calc(3rem + 1rem);
+    }
+
+    .nav__list{
+        display: flex;
+        padding-top: 0;
+    }
+
+    .nav__item{
+        margin-left: 3rem;
+        margin-bottom: 0;
+    }
+
+    .nav__toggle{
+        display: none;
+    }
+
+    .nav__link{
+        color: #0e2431;
+    }
+
+    .home{
+        display: flex ;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6rem !important;
+    }
+    
+    .img-social{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row-reverse;
+    }
+    
+    .home__title2{
+        font-size: .9rem;
+        margin-bottom: 1.5rem;
+        margin-top: 2.5rem;
+    }
+    
+    .home__title2 span{
+        font-weight: 800;
+        color: #6DB0FF;
+    }
+    
+    .home__title{
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .home__title-color{
+        font-size: 2.7rem;
+        color: #6DB0FF;
+    }
+    
+    .home__img{
+        width: 340px;
+    }
+    
+    .home__social{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .home__social-icon{
+        font-size: 1.5rem;
+        color: #4070f4;
+        transition: all .3s;
+    }
+    
+    .home__social-icon:hover{
+        color: #6DB0FF;
+    }
+
+
+    .about__container, .skills__container{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        text-align: initial;
+    }
+
+    .about__img img{
+        width: 400px;
+    }
+
+    .about__text{
+        text-align: initial;
+    }
+
+    .work__container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+
+    .contact__form{
+        width: 360px;
+    }
+
+    .contact__container{
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .bd-grid{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .home__img{
+        right: 10%;;
+    }
+    
+}
+
+
+
+/*=============== Bala de rolagem ==================*/
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #292935;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #4070f4;
+    border-radius: 8px;
+}
